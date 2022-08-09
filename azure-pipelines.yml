@@ -1,0 +1,24 @@
+# Starter pipeline
+
+#pool: Default
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: ZscalerIaCScan@1
+  inputs:
+    region: 'US'
+    failBuild: true
+    clientId: 'pzgnqvelWDdsIknylsAQ5JvhDJnjBSFK'
+    clientSecret: 'y65EU6dTsVcMMRWeGJ96R3oq7DqogqA46MkJzLT5ZCKgnx-ViLKxLcFjVPVLNW1a'  
+  #env:
+  #  AUTH_URL: "https://int-auth.zscwp.io"
+  #  API_URL: "https://int.api.zscwp.io"       
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
